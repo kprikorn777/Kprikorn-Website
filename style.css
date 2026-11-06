@@ -180,12 +180,15 @@ h1 { font: 400 clamp(32px, 3.5vw, 43px)/1.15 var(--serif); letter-spacing: -1.7p
   .theme-toggle:hover { border-color: var(--lavender); }
 }
 .game-card:focus-within { border-color: rgba(var(--accent-rgb), .5); }
+.game-card--featured { border-color: rgba(var(--accent-rgb), .42); background: linear-gradient(110deg, rgba(var(--accent-rgb), .14), transparent 85%), var(--glass); box-shadow: inset 0 1px 0 rgba(var(--accent-rgb), .12), 0 8px 35px rgba(var(--accent-rgb), .05); }
 
 /* Les conditions restent accessibles sans allonger la collection par défaut. */
 .game-conditions { margin-top: 9px; border-top: 1px solid var(--line); padding-top: 8px; font-size: 10px; color: var(--muted); }
 .game-conditions summary { width: fit-content; cursor: pointer; color: var(--accent); padding-block: 3px; }
 .game-conditions summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 .game-conditions ul { list-style: disc; padding: 9px 0 3px 18px; display: grid; gap: 5px; }
+.game-conditions__source { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; color: var(--accent); }
+.game-conditions__source svg { width: 12px; height: 12px; }
 .game-card__announcement { display: flex; align-items: center; gap: 7px; margin-top: 11px; font-size: 10px; color: var(--accent); }
 .game-card__announcement svg { width: 14px; height: 14px; }
 .game-card--upcoming { border-style: dashed; }

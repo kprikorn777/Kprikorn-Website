@@ -3,7 +3,7 @@
    Aucun changement HTML/CSS nécessaire pour ajouter un réseau ou un jeu.
 
    Réseaux et parrainages : liens et conditions fournis par Kprikorn.
-   WaxTCG : emplacement réservé ; renseigner url quand le lien sera connu.
+   featured : true met une carte en avant ; l’ordre du tableau fixe sa place.
    Une carte sans URL reste informative, sans bouton de navigation factice.
 
    avatar.imageUrl : null = monogramme intégré ; sinon URL ou chemin local.
@@ -12,6 +12,7 @@
    Un code est prioritaire sur le lien dans le bouton de copie.
    copyValue / copyLabel / copySuccess : copie personnalisée (ex. pseudo).
    conditions : liste optionnelle, affichée dans un volet dépliable natif.
+   conditionsUrl : lien facultatif vers les règles officielles du jeu.
    releaseAt / timeZone : annonce datée, sans activation de lien automatique.
    ================================================================ */
 const config = {
@@ -29,6 +30,20 @@ const config = {
     { name: "Instagram", handle: "@kprikorn777", url: "https://www.instagram.com/kprikorn777", icon: "instagram", accent: "#dfa9c6" }
   ],
   games: [
+    {
+      title: "WaxTCG", badge: "À la une", featured: true, icon: "music", logoUrl: null,
+      url: "https://waxtcg.com/", referralUrl: "https://waxtcg.com/?ref=Kprikorn", code: null,
+      description: "+240 pour toi dès ton inscription via mon lien. +480 pour moi quand tu as vraiment joué !",
+      conditionsTitle: "Comment valider le parrainage WaxTCG ?",
+      conditions: [
+        "Inscris-toi via mon lien : tu reçois +240 dès ton inscription.",
+        "Pour valider le parrainage, ouvre 10 boosters et joue 20 minutes.",
+        "Reviens un autre jour, depuis une connexion différente de la mienne.",
+        "Une fois le parrainage validé, je reçois +480."
+      ],
+      conditionsUrl: "https://waxtcg.com/regles",
+      accent: "#e5b7cd"
+    },
     {
       title: "WikiMasters", badge: "Trade & guilde", icon: "book", logoUrl: null,
       url: "https://www.wiki-masters.com/", referralUrl: null, code: null,
@@ -55,13 +70,6 @@ const config = {
         "Rejoue au moins 24 heures après ton inscription."
       ],
       accent: "#c4afe9"
-    },
-    {
-      title: "WaxTCG", badge: "TCG", icon: "cards", logoUrl: null,
-      url: null, referralUrl: null, code: null,
-      description: "Un nouvel univers TCG arrive dans la collection. Le lien sera ajouté ici à son ouverture.",
-      releaseAt: "2026-11-06T20:00:00+01:00", timeZone: "Europe/Paris",
-      accent: "#e5b7cd"
     }
   ]
 };
@@ -199,6 +207,7 @@ function renderGames() {
     const code = typeof game.code === "string" ? game.code.trim() : "";
     const customCopy = typeof game.copyValue === "string" ? game.copyValue.trim() : "";
     const card = element("article", "game-card");
+    if (game.featured) card.classList.add("game-card--featured");
     const upcoming = !url && !code && !customCopy;
     if (upcoming) card.classList.add("game-card--upcoming");
     setAccent(card, game.accent);
@@ -249,6 +258,12 @@ function renderGames() {
       const conditions = element("ul");
       game.conditions.forEach((condition) => conditions.append(element("li", "", condition)));
       details.append(conditions);
+      const conditionsUrl = validUrl(game.conditionsUrl);
+      if (conditionsUrl) {
+        const source = externalLink(conditionsUrl, "game-conditions__source", `Lire les conditions officielles · ${game.title}`);
+        source.append(document.createTextNode("Conditions officielles"), icon("arrow"));
+        details.append(source);
+      }
       card.append(details);
     }
     if (upcoming) {

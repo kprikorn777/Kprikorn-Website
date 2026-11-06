@@ -32,9 +32,11 @@ Conserve les virgules, les guillemets et les crochets dans la configuration. Pou
 
 ## WaxTCG
 
-Une carte est réservée pour l’ouverture annoncée le **6 novembre 2026 à 20 h, heure de Paris**. Lorsque l’adresse sera connue, renseigne `url` dans l’entrée `WaxTCG` de `config.games` : les boutons de visite et de copie apparaîtront automatiquement, et le badge passera de « À venir » à « TCG ».
+WaxTCG est ouvert et mis en avant en première position avec le badge « À la une ». Le lien de parrainage est **https://waxtcg.com/?ref=Kprikorn**.
 
-L’heure annoncée n’active pas de lien automatiquement. La carte reste informative tant que son URL n’a pas été ajoutée.
+Le filleul reçoit **+240 dès son inscription** via le lien ; Kprikorn reçoit **+480 une fois le parrainage validé**. Les règles officielles demandent au filleul d’ouvrir **10 boosters**, de jouer **20 minutes** et de revenir **un autre jour depuis une connexion différente de celle du parrain**. Les conditions sont affichées dans un volet dépliable sur la carte, avec un lien vers les [règles officielles](https://waxtcg.com/regles).
+
+Pour modifier cette mise en avant, déplace l’entrée dans `config.games` et change sa propriété `featured`. Le champ `badge` définit le texte affiché sur la carte.
 
 ## Avatar et logos
 
