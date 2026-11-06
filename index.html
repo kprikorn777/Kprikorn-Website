@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#14161e" id="theme-color">
+    <meta name="description" content="L’univers de Kprikorn : mes réseaux, mes découvertes TCG et mes liens, réunis au même endroit.">
+    <title>Kprikorn — Mon petit univers</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%2314161e'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%23d3c4f3'%3EK%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Le thème est restauré avant l’affichage pour éviter un flash lumineux. -->
+    <script>
+      try {
+        if (localStorage.getItem('kprikorn.theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+        }
+      } catch (_) { /* Le mode sombre fonctionne aussi sans stockage. */ }
+    </script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient__orb ambient__orb--blue"></div>
+      <div class="ambient__orb ambient__orb--pink"></div>
+      <div class="ambient__orb ambient__orb--violet"></div>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./index.html" aria-label="Kprikorn, accueil">
+          <span class="wordmark__symbol" aria-hidden="true">k.</span>
+          <span id="wordmark-name">kprikorn</span>
+        </a>
+        <div class="topbar__right">
+          <span class="topbar__note">Un petit monde à partager.</span>
+          <button id="theme-toggle" class="theme-toggle" type="button" role="switch"
+            aria-checked="false" aria-label="Activer le mode clair" title="Activer le mode clair">
+            <span class="theme-toggle__thumb" aria-hidden="true"></span>
+            <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+            <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.2 14.2A8.5 8.5 0 0 1 9.8 3.8a8.5 8.5 0 1 0 10.4 10.4Z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="main" class="layout" tabindex="-1">
+        <section class="profile glass reveal" aria-labelledby="profile-name">
+          <div class="profile__topline"><span class="eyebrow">BIENVENUE DANS MON UNIVERS</span><span class="tiny-star" aria-hidden="true">✦</span></div>
+          <div class="identity">
+            <div class="avatar" id="avatar"></div>
+            <div class="identity__text">
+              <p class="greeting" id="greeting">Hello, moi c’est</p>
+              <h1 id="profile-name">Kprikorn<span class="name-dot">.</span></h1>
+            </div>
+          </div>
+          <ul class="interests" id="interests" aria-label="Mes centres d’intérêt"></ul>
+          <div class="about">
+            <h2 class="visually-hidden">À propos</h2>
+            <p id="bio"></p>
+          </div>
+          <div class="section-divider"><span>ON GARDE LE LIEN ?</span><span aria-hidden="true">↘</span></div>
+          <nav aria-label="Mes réseaux sociaux"><ul class="socials" id="socials"></ul></nav>
+          <p class="profile__signature"><span aria-hidden="true">✧</span> Des passions. Des découvertes. Du partage.</p>
+        </section>
+
+        <section class="discover reveal" aria-labelledby="discover-title">
+          <div class="discover__heading">
+            <div>
+              <p class="eyebrow">LA COLLECTION DE LIENS</p>
+              <h2 id="discover-title">À toi de <em>jouer.</em><span class="heading-spark" aria-hidden="true">✳</span></h2>
+            </div>
+            <span class="count" id="game-count"></span>
+          </div>
+          <p class="discover__intro" id="discover-intro"></p>
+          <div class="games" id="games"></div>
+          <aside class="collection-note glass">
+            <span class="collection-note__icon" id="note-icon" aria-hidden="true"></span>
+            <p id="collection-note"></p>
+            <span class="collection-note__star" aria-hidden="true">✧</span>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> <span id="footer-name">Kprikorn</span><span class="footer__separator">/</span>Mon petit coin d’Internet.</p>
+        <span class="footer__made">Fait avec soin <span aria-hidden="true">♡</span></span>
+      </footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <noscript><p class="noscript">Active JavaScript pour afficher les réseaux et les liens de Kprikorn.</p></noscript>
+  </body>
+</html>
