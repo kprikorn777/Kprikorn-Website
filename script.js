@@ -19,10 +19,10 @@ const config = {
   name: "Kprikorn",
   greeting: "Hello, moi c’est",
   avatar: { imageUrl: null, monogram: "K", alt: "Avatar de Kprikorn" },
-  bio: "Des cartes, des découvertes et de bons moments. Je partage ici mes réseaux et les univers TCG que j’aime explorer. Installe-toi, tu es au bon endroit.",
+  bio: "Bienvenue dans mon univers! Je partage ici mes réseaux et les univers TCG que j’aime. Installe-toi, tu es au bon endroit!",
   interests: ["Gaming", "TCG & collections", "Découvertes"],
-  intro: "Quelques univers à découvrir. La prochaine belle pioche est peut-être ici.",
-  note: "De nouveaux univers viendront agrandir la collection. Repasse faire un tour !",
+  intro: "Voici mes quelques univers favoris, viens jeter un oeil!",
+  note: "Un nouvel univers est en route pour agrandir la collection. Repasse plus tard pour le découvrir!",
   defaultTheme: "dark",
   socials: [
     { name: "Twitch", handle: "@kprikorn", url: "https://twitch.tv/kprikorn", icon: "twitch", accent: "#bd9bea" },
@@ -33,8 +33,8 @@ const config = {
     {
       title: "WaxTCG", badge: "À la une", featured: true, icon: "music", logoUrl: null,
       url: "https://waxtcg.com/", referralUrl: "https://waxtcg.com/?ref=Kprikorn", code: null,
-      description: "+240 pour toi dès ton inscription via mon lien. +480 pour moi quand tu as vraiment joué !",
-      conditionsTitle: "Comment valider le parrainage WaxTCG ?",
+      description: "+240 pour toi dès ton inscription via mon lien. +480 pour moi quand tu as vraiment joué.",
+      conditionsTitle: "Comment valider le parrainage WaxTCG?",
       conditions: [
         "Inscris-toi via mon lien : tu reçois +240 dès ton inscription.",
         "Pour valider le parrainage, ouvre 10 boosters et joue 20 minutes.",
@@ -48,13 +48,13 @@ const config = {
       title: "WikiMasters", badge: "Trade & guilde", icon: "book", logoUrl: null,
       url: "https://www.wiki-masters.com/", referralUrl: null, code: null,
       copyValue: "Kprikorn", copyLabel: "Copier le pseudo", copySuccess: "Pseudo copié",
-      description: "Dispo pour les trades sous le pseudo Kprikorn. Ma guilde KpriCrew vient d’ouvrir : rejoins-nous !",
+      description: "Disponible sous le pseudo Kprikorn. Ma guilde KpriCrew vient également d’ouvrir: rejoins-nous!",
       accent: "#a9c7ed"
     },
     {
       title: "KyaraGames", badge: "Anime", icon: "sparkles", logoUrl: null,
       url: "https://kyara.games/", referralUrl: "https://kyara.games/?ref=d0627989-87f0-4ae1-ba05-69906d54b3aa", code: null,
-      description: "Lie ton Discord et ouvre 20 boosters : nous recevons chacun 3 boosters bonus !",
+      description: "Lie ton Discord et ouvre 20 boosters : nous recevons chacun 3 boosters bonus!",
       accent: "#dbc198"
     },
     {
